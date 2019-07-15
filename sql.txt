@@ -1,0 +1,9 @@
+CREATE DATABASE newdb0;
+---------------------------------------------------------------
+USE newdb0
+
+CREATE TABLE `hostings` ( `id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(250) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_bin;
+
+CREATE TABLE `servers` ( `id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(250) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL , `ip` VARCHAR(250) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL , `hosting_id` INT NOT NULL , `status` INT NOT NULL DEFAULT '0' , `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`id`)) ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_bin;
+
+INSERT INTO `hostings` (`id`, `name`) VALUES (NULL, 'Microsoft'), (NULL, 'RedHat'), (NULL, 'Amazon');
